@@ -17,13 +17,18 @@ const UserSchema = new Schema(
                 'Must be valid email address'
             ]
         },
-        thoughts: [],
-        friends: [],
+        thoughts: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
+        }],
+        friends: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }],
     },
     {
         toJSON: {
             virtuals: true,
-            getters: true
         },
         id: false
     }
