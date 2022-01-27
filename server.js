@@ -18,20 +18,20 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-
 
 mongoose.set('debug', true);
 
-// Retrieve all thoughts
-app.get('/thoughts', (req, res) => {
-    db.Thought.find({})
-        .then(dbThought => {
-            res.json(dbThought);
-        })
-        .catch(err => {
-            res.json(err);
-        });
-});
+// // Retrieve all thoughts
+// app.get('/thoughts', (req, res) => {
+//     db.Thought.find({})
+//         .then(dbThought => {
+//             res.json(dbThought);
+//         })
+//         .catch(err => {
+//             res.json(err);
+//         });
+// });
 
-// Retrieve all users
-app.get('/user', (req, res) => {
-    db.User.find({})
-})
+// // Retrieve all users
+// app.get('/user', (req, res) => {
+//     db.User.find({})
+// })
 
 app.listen(PORT, () => console.log(`Connected on localhost:${PORT}`));

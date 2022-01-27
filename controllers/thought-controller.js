@@ -2,7 +2,9 @@ const { Thought, User } = require('../models');
 
 const thoughtController = {
     //get all thoughts
-    getAllThoughts(){},
+    getAllThoughts(req, res){
+        res.json({ message: "Message here" })
+    },
     //get one thought by _id
     getThoughtById({ params }, res) {
         Thought.findOne({ _id: params.id })
