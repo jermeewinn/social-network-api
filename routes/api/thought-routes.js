@@ -11,16 +11,19 @@ const {
 } = require('../../controllers/thought-controller');
 // GET/POST functions for /api/thoughts
 router
-    .route('/thought')
+    .route('/thoughts')
     .get(getAllThoughts)
     .post(createNewThought)
     .delete(deleteThought);
+// GET/PUT functions for /api/thought/:thoughtId
+router
+    .route('/thought/:thoughtId')
+    .get(getThoughtById)
+    .put(updateThought)
 // GET/POST/DELETE functions for /api/thoughts/:thoughtId/reaction
 router
     .route('/thought/:thoughtId/reaction')
-    .get(getThoughtById)
     .post(addReaction)
-    .put(updateThought)
     .delete(deleteReaction);
 
 module.exports = router;
